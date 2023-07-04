@@ -1,0 +1,7 @@
+{
+  "name": "masjid-angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
