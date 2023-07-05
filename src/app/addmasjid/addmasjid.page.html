@@ -1,0 +1,233 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Masjid</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <h2>Add a Masjid Time-Table</h2>
+    <form [formGroup]="addmasjidForm" (submit)="addMasjid()">
+      <ion-input
+        label="Masjid Name"
+        labelPlacement="floating"
+        inputmode="text"
+        required
+        fill="solid"
+        placeholder="Enter a Masjid Name"
+        formControlName="masjid_name"
+        type="text"
+      ></ion-input>
+      <ion-input
+        class="ion-margin-top"
+        label="Area Name"
+        labelPlacement="floating"
+        inputmode="text"
+        required
+        fill="solid"
+        placeholder="Enter a Area Name"
+        formControlName="area"
+        type="text"
+      ></ion-input>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Fajr</ion-label>
+        <ion-datetime-button datetime="fajr"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="fajr"
+              name="fajr"
+              presentation="time"
+              formControlName="fajr"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Zuhar</ion-label>
+        <ion-datetime-button datetime="zuhar"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="zuhar"
+              name="zuhar"
+              formControlName="zuhar"
+              presentation="time"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Asr</ion-label>
+        <ion-datetime-button datetime="asr"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="asr"
+              name="asr"
+              presentation="time"
+              formControlName="asr"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Magrib</ion-label>
+        <ion-datetime-button datetime="magrib"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="magrib"
+              name="magrib"
+              presentation="time"
+              formControlName="magrib"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Isha</ion-label>
+        <ion-datetime-button datetime="isha"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="isha"
+              name="isha"
+              presentation="time"
+              formControlName="isha"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Juma 1</ion-label>
+        <ion-datetime-button datetime="juma_1"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="juma_1"
+              name="juma_1"
+              presentation="time"
+              formControlName="juma_1"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Juma 2</ion-label>
+        <ion-datetime-button datetime="juma_2"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="juma_2"
+              name="juma_2"
+              presentation="time"
+              formControlName="juma_2"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="ion-margin-top" style="border-radius: 0.2em">
+        <ion-label>Juma 3</ion-label>
+        <ion-datetime-button datetime="juma_3"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="juma_3"
+              name="juma_3"
+              presentation="time"
+              formControlName="juma_3"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <!-- <div class="form-group">
+        <label for="usr">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="masjidName"
+          name="masjid_name"
+          formControlName="masjid_name"
+          placeholder="Enter a Masjid Name"
+        />
+        <label for="usr">Area:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="areaName"
+          name="areaName"
+          formControlName="area"
+          placeholder="Enter a Area Name"
+        />
+        <label for="usr">Select Fajr Time:</label>
+        <input
+          type="time"
+          id="fajr"
+          formControlName="fajr"
+          class="form-control"
+          placeholder="Enter your Password..."
+        />
+        <label for="usr">Select Zuhar Time:</label>
+        <input
+          type="time"
+          id="zuhar"
+          formControlName="zuhar"
+          class="form-control"
+          placeholder="Enter your Password..."
+        />
+        <label for="usr">Select Asr Time:</label>
+        <input
+          type="time"
+          id="asr"
+          formControlName="asr"
+          class="form-control"
+          placeholder="Enter your Password..."
+        />
+        <label for="usr">Select Magrib Time:</label>
+        <input
+          type="time"
+          formControlName="magrib"
+          id="magrib"
+          class="form-control"
+          placeholder="Enter your Password..."
+        />
+        <label for="usr">Select Isha Time:</label>
+        <input
+          type="time"
+          formControlName="isha"
+          id="isha"
+          class="form-control"
+          placeholder="Enter your Password..."
+        />
+        <label for="usr">Select Juma Jamat 1 Time:</label>
+        <input
+          type="time"
+          id="juma_1"
+          class="form-control"
+          formControlName="juma_1"
+        />
+        <label for="usr">Select Juma Jamat 2 Time:</label>
+        <input
+          type="time"
+          id="juma_2"
+          formControlName="juma_2"
+          class="form-control"
+        />
+        <label for="usr">Select Juma Jamat 3 Time:</label>
+        <input
+          type="time"
+          id="juma_3"
+          class="form-control"
+          formControlName="juma_3"
+        />
+      </div> -->
+      <ion-button type="submit" [disabled]="addmasjidForm.invalid"
+        >Add</ion-button
+      >
+    </form>
+  </div>
+</ion-content>
